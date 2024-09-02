@@ -1,43 +1,4 @@
-/* .hamburger-menu {
-    position: relative;
-}
-
-.hamburger-button {
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.hamburger-dropdown {
-    position: absolute;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    top: 100%;
-    left: 0;
-    width: 150px;
-    list-style-type: none;
-    padding: 10px 0;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.hamburger-dropdown li {
-    padding: 8px 16px;
-    cursor: pointer;
-}
-
-.horizontal-menu ul {
-    display: flex;
-    justify-content: space-around;
-    list-style-type: none;
-    padding: 0;
-}
-
-.horizontal-menu li {
-    cursor: pointer;
-    padding: 10px;
-    font-size: 18px;
-} */
-
-/* Base styling for header */
+/* 
 .header {
     display: flex;
     justify-content: space-between;
@@ -52,12 +13,93 @@
     font-weight: bold;
 }
 
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #282c34;
+        border: 1px solid #444;
+        border-radius: 4px;
+        padding: 10px;
+    }
+
+    .menu.open {
+        display: flex;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+} */
+
+/* Base styling for header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #282c34;
+    color: white;
+    position: relative; /* Ensure that the position is relative for absolute positioning of the menu */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
 /* Navigation styling */
 .nav {
     display: flex;
     align-items: center;
 }
 
+/* Menu styling */
 .menu {
     display: flex;
     list-style-type: none;
@@ -87,24 +129,27 @@
     border: none;
     color: white;
     cursor: pointer;
+    z-index: 1000; /* Ensure it's above other elements */
 }
 
 /* Responsive styling */
 @media (max-width: 768px) {
     .menu {
-        display: none;
+        display: flex;
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 60px; /* Adjust based on header height */
         right: 20px;
         background-color: #282c34;
         border: 1px solid #444;
         border-radius: 4px;
         padding: 10px;
+        width: 200px; /* Adjust width as needed */
+        display: none; /* Hide menu by default */
     }
 
     .menu.open {
-        display: flex;
+        display: flex; /* Show menu when 'open' class is added */
     }
 
     .menu li {

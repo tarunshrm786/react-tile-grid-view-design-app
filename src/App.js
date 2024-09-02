@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import GridView from './components/GridView/GridView';
 import TileView from './components/TileView/TileView';
 import DetailView from './components/DetailView/DetailView';
-import HorizontalMenu from './components/Header/HorizontalMenu';
-import HamburgerMenu from './components/Header/HamburgerMenu';
 import Header from './components/Header/Header';
 import './App.css';
 import { fetchData } from './services/apiService';
