@@ -1,0 +1,61 @@
+/* .grid-view {
+    margin: 20px;
+}
+
+.grid-view table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.grid-view th, .grid-view td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.grid-view th {
+    background-color: #f4f4f4;
+}
+ */
+ .grid-view {
+    margin: 20px;
+    overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+.grid-view table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Ensure columns are fixed and do not resize */
+}
+
+.grid-view th, .grid-view td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+
+.grid-view th {
+    background-color: #f4f4f4;
+}
+
+/* Specific styling for email and phone columns */
+.grid-view td.email, .grid-view td.phone {
+    max-width: 150px; /* Adjust width as necessary */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+
+/* Responsive styling for small screens */
+@media (max-width: 768px) {
+    .grid-view table {
+        display: block; /* Make the table block to enable horizontal scroll */
+        overflow-x: auto; /* Ensure horizontal scroll is enabled */
+        white-space: nowrap; /* Prevent wrapping of table content */
+    }
+
+    .grid-view th, .grid-view td {
+        display: table-cell; /* Ensure cells are displayed in a table-cell manner */
+    }
+}

@@ -1,0 +1,85 @@
+/* .tile-view {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.tile {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: calc(33.333% - 40px);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.tile h3 {
+    margin-top: 0;
+}
+
+.tile button {
+    margin-right: 10px;
+} */
+
+/* Base styling for tile view */
+.tile-view {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.tile {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: calc(33.333% - 40px); /* 3 tiles per row */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    border-radius: 8px; /* Added border-radius for better appearance */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+}
+
+.tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.tile h3 {
+    margin-top: 0;
+}
+
+.tile button {
+    margin-right: 10px;
+}
+
+/* Responsive styling for tablets and smaller screens */
+@media (max-width: 1024px) {
+    .tile {
+        width: calc(50% - 40px); /* 2 tiles per row */
+    }
+}
+
+/* Responsive styling for small screens */
+@media (max-width: 768px) {
+    .tile {
+        width: calc(100% - 40px); /* 1 tile per row */
+    }
+}
+
+/* Responsive styling for very small screens */
+@media (max-width: 480px) {
+    .tile {
+        padding: 15px;
+        width: calc(100% - 20px); /* Full width with smaller gap */
+    }
+
+    .tile h3 {
+        font-size: 18px; /* Adjust heading size for smaller screens */
+    }
+
+    .tile button {
+        margin-right: 5px; /* Adjust button margin for smaller screens */
+    }
+}

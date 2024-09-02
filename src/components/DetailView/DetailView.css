@@ -1,0 +1,80 @@
+/* .detail-view {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.detail-view button {
+    margin-bottom: 20px;
+}
+
+.detail-view h2 {
+    margin-top: 0;
+} */
+
+/* Base styling for detail view */
+.detail-view {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Added border-radius for better look */
+}
+
+.detail-view button {
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.detail-view button:hover {
+    background-color: #0056b3;
+}
+
+.detail-view h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .detail-view {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .detail-view button {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .detail-view h2 {
+        font-size: 20px;
+    }
+}
+
+/* Responsive styling for very small screens */
+@media (max-width: 480px) {
+    .detail-view {
+        margin: 5px;
+        padding: 10px;
+    }
+
+    .detail-view button {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .detail-view h2 {
+        font-size: 18px;
+    }
+}

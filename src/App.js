@@ -1,25 +1,53 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import GridView from './components/GridView/GridView';
+import TileView from './components/TileView/TileView';
+import DetailView from './components/DetailView/DetailView';
+import HorizontalMenu from './components/Header/HorizontalMenu';
+import HamburgerMenu from './components/Header/HamburgerMenu';
+import Header from './components/Header/Header';
 import './App.css';
+import { fetchData } from './services/apiService';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [students, setStudents] = useState([]);
+    const [view, setView] = useState('grid');
+    const [selectedStudent, setSelectedStudent] = useState(null);
+
+    useEffect(() => {
+        const fetchStudents = async () => {
+            const data = await fetchData();
+            setStudents(data);
+        };
+        fetchStudents();
+    }, []);
+
+    const handleTileClick = (student) => {
+        setSelectedStudent(student);
+        setView('detail');
+    };
+
+    const handleBack = () => {
+        setView('tile');
+    };
+
+    return (
+        <div className="app">
+            <header>
+                {/* <HorizontalMenu />
+                <HamburgerMenu /> */}
+                <Header />
+            </header>
+            <main>
+                {view === 'grid' && <GridView students={students} />}
+                {view === 'tile' && <TileView students={students} onTileClick={handleTileClick} />}
+                {view === 'detail' && <DetailView student={selectedStudent} onBack={handleBack} />}
+            </main>
+            <footer>
+                <button onClick={() => setView('grid')}>Grid View</button>
+                <button onClick={() => setView('tile')}>Tile View</button>
+            </footer>
+        </div>
+    );
 }
 
 export default App;
